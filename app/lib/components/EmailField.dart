@@ -25,7 +25,10 @@ class _EmailFieldState extends State<EmailField> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      decoration: BoxDecoration(borderRadius: BorderRadius.circular(widget.rounded)),
+      decoration: BoxDecoration(
+        color: Color.fromARGB(255, 43, 41, 55),
+        borderRadius: BorderRadius.circular(widget.rounded)
+      ),
       child: TextField(
           keyboardType: widget.inputType,
           controller: widget.controller,
@@ -38,14 +41,14 @@ class _EmailFieldState extends State<EmailField> {
               fontWeight: FontWeight.normal,
               fontSize: 15.0
             ),
-            border: OutlineInputBorder(
-              borderRadius: BorderRadius.circular(widget.rounded)
-            ),
-            filled: true,
+            // border: OutlineInputBorder(
+            //   borderRadius: BorderRadius.circular(widget.rounded)
+            // ),
+            //filled: true,
             prefixIcon: Icon(Icons.email,color: Colors.blue,),
-            fillColor: Color.fromARGB(255, 43, 41, 55),
+            //fillColor: Color.fromARGB(255, 43, 41, 55),
             enabledBorder:OutlineInputBorder(borderSide: BorderSide(color: Colors.transparent)),
-            focusedBorder: OutlineInputBorder(borderSide: BorderSide(color: Colors.blue))
+            focusedBorder: OutlineInputBorder(borderSide: BorderSide(color: Colors.blue),borderRadius: BorderRadius.circular(widget.rounded))
           ),
       ),
     );

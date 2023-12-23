@@ -22,14 +22,18 @@ class PasswordField extends StatefulWidget {
 }
 
 class _PasswordFieldState extends State<PasswordField> {
+  bool _obscureText = true;
   @override
   Widget build(BuildContext context) {
     return Container(
-      decoration: BoxDecoration(borderRadius: BorderRadius.circular(widget.rounded)),
+      decoration: BoxDecoration(
+        color: Color.fromARGB(255, 43, 41, 55),
+        borderRadius: BorderRadius.circular(widget.rounded)
+      ),
       child: TextField(
           keyboardType: widget.inputType,
           controller: widget.controller,
-          obscureText: true,
+          obscureText: _obscureText,
           style: TextStyle(color: Colors.grey.shade200),
           decoration: InputDecoration(
             hintText: widget.hintText,
@@ -38,14 +42,19 @@ class _PasswordFieldState extends State<PasswordField> {
               fontWeight: FontWeight.normal,
               fontSize: 15.0
             ),
-            border: OutlineInputBorder(
-              borderRadius: BorderRadius.circular(widget.rounded)
-            ),
-            filled: true,
+            // border: OutlineInputBorder(
+            //   borderRadius: BorderRadius.circular(widget.rounded)
+            // ),
+            //filled: true,
             prefixIcon: Icon(Icons.lock,color: Colors.blue,),
-            fillColor: Color.fromARGB(255, 43, 41, 55),
+            suffixIcon: IconButton(onPressed: (){
+              setState(() {
+                _obscureText = !_obscureText;
+              });
+            }, icon: _obscureText ? Icon(Icons.visibility) : Icon(Icons.visibility_off),),
+            //fillColor: Color.fromARGB(255, 43, 41, 55),
             enabledBorder:OutlineInputBorder(borderSide: BorderSide(color: Colors.transparent)),
-            focusedBorder: OutlineInputBorder(borderSide: BorderSide(color: Colors.blue))
+            focusedBorder: OutlineInputBorder(borderSide: BorderSide(color: Colors.blue),borderRadius: BorderRadius.circular(widget.rounded))
           ),
       ),
     );
