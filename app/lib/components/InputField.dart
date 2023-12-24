@@ -1,14 +1,16 @@
 import 'package:flutter/material.dart';
 
-class EmailField extends StatefulWidget {
+class InputField extends StatefulWidget {
   final controller;
+  final Icon icon;
   //final double width;
   final double rounded;
   //final double height;
   final TextInputType inputType;
   final String hintText;
-  const EmailField({
+  const InputField({
     super.key,
+    required this.icon,
     required this.rounded,
     //required this.height,
     required this.controller,
@@ -18,10 +20,10 @@ class EmailField extends StatefulWidget {
   });
 
   @override
-  State<EmailField> createState() => _EmailFieldState();
+  State<InputField> createState() => _InputFieldState();
 }
 
-class _EmailFieldState extends State<EmailField> {
+class _InputFieldState extends State<InputField> {
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -45,7 +47,7 @@ class _EmailFieldState extends State<EmailField> {
             //   borderRadius: BorderRadius.circular(widget.rounded)
             // ),
             //filled: true,
-            prefixIcon: Icon(Icons.email,color: Colors.blue,),
+            prefixIcon: widget.icon,
             //fillColor: Color.fromARGB(255, 43, 41, 55),
             enabledBorder:OutlineInputBorder(borderSide: BorderSide(color: Colors.transparent)),
             focusedBorder: OutlineInputBorder(borderSide: BorderSide(color: Colors.blue),borderRadius: BorderRadius.circular(widget.rounded))

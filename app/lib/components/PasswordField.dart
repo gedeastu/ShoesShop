@@ -51,7 +51,7 @@ class _PasswordFieldState extends State<PasswordField> {
               setState(() {
                 _obscureText = !_obscureText;
               });
-            }, icon: _obscureText ? Icon(Icons.visibility) : Icon(Icons.visibility_off),),
+            }, icon: _obscureText ? Icon(Icons.visibility,color: Colors.grey.shade600,) : Icon(Icons.visibility_off,color: Colors.grey.shade600,),),
             //fillColor: Color.fromARGB(255, 43, 41, 55),
             enabledBorder:OutlineInputBorder(borderSide: BorderSide(color: Colors.transparent)),
             focusedBorder: OutlineInputBorder(borderSide: BorderSide(color: Colors.blue),borderRadius: BorderRadius.circular(widget.rounded))
