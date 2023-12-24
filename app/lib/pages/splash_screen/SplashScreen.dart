@@ -1,8 +1,7 @@
 import 'package:app/layouts/login/LoginLayout.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-//import 'package:splash_screen/screens/home.dart';
+import 'package:lottie/lottie.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
@@ -11,12 +10,14 @@ class SplashScreen extends StatefulWidget {
   State<SplashScreen> createState() => _SplashScreenState();
 }
 
-class _SplashScreenState extends State<SplashScreen> {
-
+class _SplashScreenState extends State<SplashScreen> with TickerProviderStateMixin{
+  late final AnimationController _controller;
   @override
   void initState() {
     // TODO: implement initState
     super.initState();
+    _controller = AnimationController(vsync: this);
+    
     SystemChrome.setEnabledSystemUIMode(SystemUiMode.immersive);
     Future.delayed(const Duration(seconds: 2),(){
       Navigator.of(context).pushReplacement(
@@ -29,6 +30,7 @@ class _SplashScreenState extends State<SplashScreen> {
 
   @override
   void dispose() {
+    _controller.dispose();
     // TODO: implement dispose
     SystemChrome.setEnabledSystemUIMode(
       SystemUiMode.manual,overlays: SystemUiOverlay.values
@@ -48,7 +50,14 @@ class _SplashScreenState extends State<SplashScreen> {
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              SvgPicture.asset('assets/union.svg',width: 130,height: 130,)
+              Lottie.network("https://lottie.host/9706c92e-ccba-4d3a-8abd-46f21daf421b/V0XPFJgtAb.json",
+              controller: _controller,
+              onLoaded: (compos){
+                _controller
+                ..duration = compos.duration
+                ..forward();
+              }),
+              //SvgPicture.asset('assets/union.svg',width: 130,height: 130,)
             ],
           ),
         )
