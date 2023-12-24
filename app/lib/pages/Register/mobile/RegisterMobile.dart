@@ -1,5 +1,6 @@
 import 'package:app/components/InputField.dart';
 import 'package:app/components/PasswordField.dart';
+import 'package:app/layouts/home/HomeLayout.dart';
 import 'package:flutter/material.dart';
 
 class RegisterMobile extends StatefulWidget {
@@ -86,9 +87,11 @@ class _RegisterMobileState extends State<RegisterMobile> {
                           )
                         ),
                         onPressed: (){
-                        
+                           Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context) {
+                            return Home();
+                          },));
                         }, 
-                        child: Text("Sign In",style: TextStyle(color: Colors.grey.shade200,fontWeight: FontWeight.bold,fontSize: 15),)),
+                        child: Text("Sign Up",style: TextStyle(color: Colors.grey.shade200,fontWeight: FontWeight.bold,fontSize: 15),)),
                       ),
                     ],
                   ),
