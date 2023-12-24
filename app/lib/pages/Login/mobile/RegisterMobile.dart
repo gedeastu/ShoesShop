@@ -45,7 +45,7 @@ class _RegisterMobileState extends State<RegisterMobile> {
                         children: [
                           Text("Username",style: TextStyle(color: Colors.grey.shade200,fontWeight: FontWeight.normal,fontSize: 17),),
                           SizedBox(height: 10.0,),
-                          InputField(controller: widget.emailController, inputType: TextInputType.emailAddress, hintText: "Your Username",rounded: 10.0,icon: Icon(Icons.check_circle,color: Colors.blue,),)
+                          InputField(controller: widget.emailController, inputType: TextInputType.emailAddress, hintText: "Your Username",rounded: 10.0,icon: Icon(Icons.remove_circle_outlined,color: Colors.blue,),)
                         ],
                       ),
                       SizedBox(height: 25.0,),
@@ -98,10 +98,10 @@ class _RegisterMobileState extends State<RegisterMobile> {
                   child: Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        Text("Don't have an account?",style: TextStyle(color: Colors.grey.shade600),),
+                        Text("Already have an account?",style: TextStyle(color: Colors.grey.shade600),),
                         TextButton(onPressed: (){
-                          
-                        }, 
+                          Navigator.of(context).pop();
+                        },
                         style: ButtonStyle(
                           overlayColor: MaterialStateProperty.all(Colors.transparent),
                           foregroundColor: MaterialStateProperty.resolveWith<Color>((Set <MaterialState> states){
@@ -112,7 +112,7 @@ class _RegisterMobileState extends State<RegisterMobile> {
                               }
                           })
                         ),
-                        child: Text("Sign up"),
+                        child: Text("Sign In"),
                         )
                   ],),
                 )
