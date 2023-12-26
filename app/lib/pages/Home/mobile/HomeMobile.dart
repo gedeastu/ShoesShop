@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 class HomeMobile extends StatefulWidget {
   const HomeMobile({super.key});
@@ -16,32 +17,66 @@ class _HomeMobileState extends State<HomeMobile> {
         slivers: [
           SliverAppBar(
             pinned: true,
-            floating: true,
-            expandedHeight: 80,
+            expandedHeight: 140,
             //collapsedHeight: 80,
-            // backgroundColor: Colors.blue,
+            //backgroundColor: Colors.blue,
             flexibleSpace: FlexibleSpaceBar(
-            background:
-              SafeArea(
-                child: Container(
-                  padding: EdgeInsets.only(left: 25,right: 25),
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    crossAxisAlignment: CrossAxisAlignment.start,
+              background:
+                SafeArea(
+                  child: Container(
+                    width: double.infinity,
+                    padding: EdgeInsets.only(top:20),
+                    child: Row(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Container(
+                          padding: EdgeInsets.only(left: 25),
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.start,
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text("Hallo, Alex",style: GoogleFonts.poppins(
+                                fontWeight: FontWeight.bold,
+                                fontSize: 20,
+                                color: Colors.grey.shade200
+                              )),
+                              Text("@alexkeinn",style: GoogleFonts.poppins(
+                                color: Colors.grey.shade600,
+                                fontSize: 15,
+                              ))
+                            ],
+                          ),
+                        ),
+                        MaterialButton(
+                          shape: CircleBorder(),
+                          onPressed: () {  },
+                          child: Icon(Icons.account_circle_rounded,size: 50,color: Colors.white,)
+                        )
+                      ],
+                    ),
+                  ),
+                ),
+            ),
+            bottom: PreferredSize(
+              preferredSize: Size.fromHeight(0), 
+              child: Container(
+                padding: EdgeInsets.only(right: 25,left: 25,bottom: 15),
+                width: double.maxFinite,
+                child: SingleChildScrollView(
+                  scrollDirection: Axis.horizontal,
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.start,
                     children: [
-                      Text("Hallo, Alex",style: GoogleFonts.poppins(
-                        fontWeight: FontWeight.bold,
-                        fontSize: 20,
-                        color: Colors.grey.shade200
-                      )),
-                      Text("@alexkeinn",style: GoogleFonts.poppins(
-                        color: Colors.grey.shade600,
-                        fontSize: 15,
-                      ))
+                      Container(padding: EdgeInsets.all(5),child: Text("All Shoes",style: TextStyle(color: Colors.grey.shade200),),color: Colors.blue),
+                      SizedBox(width: 10,),
+                      Text("Heloo",style: TextStyle(color: Colors.grey.shade200)),
+                      SizedBox(width: 10,),
+                      Text("Heloo",style: TextStyle(color: Colors.grey.shade200))
                     ],
                   ),
                 ),
-              ),
+              )
             ),
             // title:    
             //   Container(
