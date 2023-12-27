@@ -6,5 +6,5 @@ void main() async {
   await Hive.initFlutter();
   //open the box
   var box = await Hive.openBox('box');
-  runApp(Root());
-}
+  runApp(const Root());
+} 

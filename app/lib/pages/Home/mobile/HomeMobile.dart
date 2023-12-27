@@ -37,15 +37,15 @@ class _HomeMobileState extends State<HomeMobile> {
         slivers: [
           SliverAppBar(
             pinned: true,
-            expandedHeight: 140,
-            //collapsedHeight: 80,
+            expandedHeight: 170,
+            collapsedHeight: 80,
             //backgroundColor: Colors.blue,
             flexibleSpace: FlexibleSpaceBar(
               background:
                 SafeArea(
                   child: Container(
                     width: double.infinity,
-                    padding: const EdgeInsets.only(top:20),
+                    padding: const EdgeInsets.only(top:25),
                     child: Row(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -58,12 +58,13 @@ class _HomeMobileState extends State<HomeMobile> {
                             children: [
                               Text("Hallo, Alex",style: GoogleFonts.poppins(
                                 fontWeight: FontWeight.bold,
-                                fontSize: 20,
+                                fontSize: 25,
                                 color: Colors.grey.shade200
                               )),
+                              SizedBox(height: 3,),
                               Text("@alexkeinn",style: GoogleFonts.poppins(
                                 color: Colors.grey.shade600,
-                                fontSize: 15,
+                                fontSize: 17,
                               ))
                             ],
                           ),
@@ -71,7 +72,7 @@ class _HomeMobileState extends State<HomeMobile> {
                         MaterialButton(
                           shape: const CircleBorder(),
                           onPressed: () {  },
-                          child: const Icon(Icons.account_circle_rounded,size: 50,color: Colors.white,)
+                          child: const Icon(Icons.account_circle_rounded,size: 65,color: Colors.white,)
                         )
                       ],
                     ),
@@ -81,21 +82,28 @@ class _HomeMobileState extends State<HomeMobile> {
             bottom: PreferredSize(
               preferredSize: const Size.fromHeight(0), 
               child: Container(
-                padding: const EdgeInsets.only(right: 25,left: 25,bottom: 15),
+                padding: EdgeInsets.only(right: 25,left: 25,bottom: 10,),
                 width: double.maxFinite,
                 child: SingleChildScrollView(
+
                   scrollDirection: Axis.horizontal,
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.start,
+                    crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
                       Container(
-                        padding: const EdgeInsets.all(5),
-                        color: Colors.blue, 
+                        height: 40,
+                        width: 100,
+                        decoration: BoxDecoration(
+                          color: Colors.blue, 
+                          borderRadius: BorderRadius.circular(10)
+                        ),
+                        //padding: const EdgeInsets.all(5),
                         child: MaterialButton(
                           onPressed: () {
-                            
+                            navigationLinkData();
                           },
-                          child: Text("All Shoes"),
+                          child: const Text("All Shoes",style: TextStyle(color: Colors.white),),
                         )
                       ),
                       const SizedBox(width: 10,),
