@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
+//import 'package:flutter_svg/svg.dart';
+import 'package:hive/hive.dart';
 import 'package:google_fonts/google_fonts.dart';
 class HomeMobile extends StatefulWidget {
   const HomeMobile({super.key});
@@ -9,10 +10,29 @@ class HomeMobile extends StatefulWidget {
 }
 
 class _HomeMobileState extends State<HomeMobile> {
+  //reference box
+  final _box = Hive.box('box');
+
+  //navigation link
+  void navigationLinkData(){
+    _box.put(1, 'All Shoes');
+    print(_box.get(1));
+  }
+
+  //popularData
+  void popularData(){
+
+  }
+
+  //newArrivalsData
+  void newArrivalsData(){
+
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color.fromARGB(255, 31, 29, 43),
+      backgroundColor: const Color.fromARGB(255, 31, 29, 43),
       body: CustomScrollView(
         slivers: [
           SliverAppBar(
@@ -25,13 +45,13 @@ class _HomeMobileState extends State<HomeMobile> {
                 SafeArea(
                   child: Container(
                     width: double.infinity,
-                    padding: EdgeInsets.only(top:20),
+                    padding: const EdgeInsets.only(top:20),
                     child: Row(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         Container(
-                          padding: EdgeInsets.only(left: 25),
+                          padding: const EdgeInsets.only(left: 25),
                           child: Column(
                             mainAxisAlignment: MainAxisAlignment.start,
                             crossAxisAlignment: CrossAxisAlignment.start,
@@ -49,9 +69,9 @@ class _HomeMobileState extends State<HomeMobile> {
                           ),
                         ),
                         MaterialButton(
-                          shape: CircleBorder(),
+                          shape: const CircleBorder(),
                           onPressed: () {  },
-                          child: Icon(Icons.account_circle_rounded,size: 50,color: Colors.white,)
+                          child: const Icon(Icons.account_circle_rounded,size: 50,color: Colors.white,)
                         )
                       ],
                     ),
@@ -59,19 +79,28 @@ class _HomeMobileState extends State<HomeMobile> {
                 ),
             ),
             bottom: PreferredSize(
-              preferredSize: Size.fromHeight(0), 
+              preferredSize: const Size.fromHeight(0), 
               child: Container(
-                padding: EdgeInsets.only(right: 25,left: 25,bottom: 15),
+                padding: const EdgeInsets.only(right: 25,left: 25,bottom: 15),
                 width: double.maxFinite,
                 child: SingleChildScrollView(
                   scrollDirection: Axis.horizontal,
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.start,
                     children: [
-                      Container(padding: EdgeInsets.all(5),child: Text("All Shoes",style: TextStyle(color: Colors.grey.shade200),),color: Colors.blue),
-                      SizedBox(width: 10,),
+                      Container(
+                        padding: const EdgeInsets.all(5),
+                        color: Colors.blue, 
+                        child: MaterialButton(
+                          onPressed: () {
+                            
+                          },
+                          child: Text("All Shoes"),
+                        )
+                      ),
+                      const SizedBox(width: 10,),
                       Text("Heloo",style: TextStyle(color: Colors.grey.shade200)),
-                      SizedBox(width: 10,),
+                      const SizedBox(width: 10,),
                       Text("Heloo",style: TextStyle(color: Colors.grey.shade200))
                     ],
                   ),
@@ -98,7 +127,7 @@ class _HomeMobileState extends State<HomeMobile> {
             //       ],
             //     ),
             // ),
-            backgroundColor: Color.fromARGB(255, 31, 29, 43),
+            backgroundColor: const Color.fromARGB(255, 31, 29, 43),
           ),
           //SliverFillRemaining(),
           SliverToBoxAdapter(
@@ -106,7 +135,7 @@ class _HomeMobileState extends State<HomeMobile> {
           ),
           SliverToBoxAdapter(
             child: Container(
-              margin: EdgeInsets.all(20.0),
+              margin: const EdgeInsets.all(20.0),
               height: 300,
               width: 300,
               color: Colors.blue,
@@ -114,7 +143,7 @@ class _HomeMobileState extends State<HomeMobile> {
           ),
            SliverToBoxAdapter(
             child: Container(
-              margin: EdgeInsets.all(20.0),
+              margin: const EdgeInsets.all(20.0),
               height: 300,
               width: 300,
               color: Colors.blue,
@@ -122,7 +151,7 @@ class _HomeMobileState extends State<HomeMobile> {
           ),
            SliverToBoxAdapter(
             child: Container(
-              margin: EdgeInsets.all(20.0),
+              margin: const EdgeInsets.all(20.0),
               height: 300,
               width: 300,
               color: Colors.blue,
