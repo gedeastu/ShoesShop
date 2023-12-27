@@ -25,59 +25,57 @@ class _LoginMobileState extends State<LoginMobile> {
             child: 
             Column(
               children: [
-                Container(
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text("Login",style: TextStyle(color: Colors.white,fontWeight: FontWeight.bold,fontSize: 25),),
-                      SizedBox(height: 5.0,),
-                      Text("Sign In to Continue",style: TextStyle(color: Colors.grey.shade600),),
-                      SizedBox(height: 50.0,),
-                      Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Text("Email Address",style: TextStyle(color: Colors.grey.shade200,fontWeight: FontWeight.normal,fontSize: 17),),
-                          SizedBox(height: 10.0,),
-                          InputField(controller: widget.emailController, inputType: TextInputType.emailAddress, hintText: "Your Email Address",rounded: 10.0,icon: Icon(Icons.email,color: Colors.blue,),)
-                        ],
-                      ),
-                      SizedBox(height: 25.0,),
-                      Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Text("Password",style: TextStyle(color: Colors.grey.shade200,fontWeight: FontWeight.normal,fontSize: 17),),
-                          SizedBox(height: 10.0,),
-                          PasswordField(controller: widget.passwordController, inputType: TextInputType.visiblePassword, hintText: "Your Password",rounded: 10.0,)
-                        ],
-                      ),
-                      SizedBox(height: 25.0,),
-                      Container(
-                        width: double.infinity,
-                        height: 50,
-                        child: ElevatedButton(
-                        style: ButtonStyle(
-                          backgroundColor: MaterialStateProperty.resolveWith<Color>((Set <MaterialState> states) {
-                              if (states.contains(MaterialState.pressed)) {
-                                return Colors.blue.shade700; // Color when the button is pressed
-                              }
-                              return Colors.blue.shade600; // Default color
-                          } ),
-                          foregroundColor: MaterialStateProperty.all<Color>(Colors.white),
-                          shape: MaterialStateProperty.all(
-                            RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(10.0)
-                            )
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text("Login",style: TextStyle(color: Colors.white,fontWeight: FontWeight.bold,fontSize: 25),),
+                    SizedBox(height: 5.0,),
+                    Text("Sign In to Continue",style: TextStyle(color: Colors.grey.shade600),),
+                    SizedBox(height: 50.0,),
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text("Email Address",style: TextStyle(color: Colors.grey.shade200,fontWeight: FontWeight.normal,fontSize: 17),),
+                        SizedBox(height: 10.0,),
+                        InputField(controller: widget.emailController, inputType: TextInputType.emailAddress, hintText: "Your Email Address",rounded: 10.0,icon: Icon(Icons.email,color: Colors.blue,),)
+                      ],
+                    ),
+                    SizedBox(height: 25.0,),
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text("Password",style: TextStyle(color: Colors.grey.shade200,fontWeight: FontWeight.normal,fontSize: 17),),
+                        SizedBox(height: 10.0,),
+                        PasswordField(controller: widget.passwordController, inputType: TextInputType.visiblePassword, hintText: "Your Password",rounded: 10.0,)
+                      ],
+                    ),
+                    SizedBox(height: 25.0,),
+                    Container(
+                      width: double.infinity,
+                      height: 50,
+                      child: ElevatedButton(
+                      style: ButtonStyle(
+                        backgroundColor: MaterialStateProperty.resolveWith<Color>((Set <MaterialState> states) {
+                            if (states.contains(MaterialState.pressed)) {
+                              return Colors.blue.shade700; // Color when the button is pressed
+                            }
+                            return Colors.blue.shade600; // Default color
+                        } ),
+                        foregroundColor: MaterialStateProperty.all<Color>(Colors.white),
+                        shape: MaterialStateProperty.all(
+                          RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(10.0)
                           )
-                        ),
-                        onPressed: (){
-                          Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context) {
-                            return Home();
-                          },));
-                        }, 
-                        child: Text("Sign In",style: TextStyle(color: Colors.grey.shade200,fontWeight: FontWeight.bold,fontSize: 15),)),
+                        )
                       ),
-                    ],
-                  ),
+                      onPressed: (){
+                        Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context) {
+                          return Home();
+                        },));
+                      },
+                      child: Text("Sign In",style: TextStyle(color: Colors.grey.shade200,fontWeight: FontWeight.bold,fontSize: 15),)),
+                    ),
+                  ],
                 ),
                 SizedBox(height: 250,),
                 Container(

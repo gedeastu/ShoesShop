@@ -11,23 +11,23 @@ class HomeMobile extends StatefulWidget {
 
 class _HomeMobileState extends State<HomeMobile> {
   //reference box
-  final _box = Hive.box('box');
-
-  //navigation link
-  void navigationLinkData(){
-    _box.put(1, 'All Shoes');
-    print(_box.get(1));
-  }
-
-  //popularData
-  void popularData(){
-
-  }
-
-  //newArrivalsData
-  void newArrivalsData(){
-
-  }
+  // final _box = Hive.box('box');
+  //
+  // //navigation link
+  // void navigationLinkData(){
+  //   _box.put(1, 'All Shoes');
+  //   print(_box.get(1));
+  // }
+  //
+  // //popularData
+  // void popularData(){
+  //
+  // }
+  //
+  // //newArrivalsData
+  // void newArrivalsData(){
+  //
+  // }
 
   @override
   Widget build(BuildContext context) {
@@ -101,7 +101,7 @@ class _HomeMobileState extends State<HomeMobile> {
                         //padding: const EdgeInsets.all(5),
                         child: MaterialButton(
                           onPressed: () {
-                            navigationLinkData();
+
                           },
                           child: const Text("All Shoes",style: TextStyle(color: Colors.white),),
                         )
