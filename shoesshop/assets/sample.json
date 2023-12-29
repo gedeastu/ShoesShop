@@ -1,0 +1,14 @@
+{
+    "popularProducts":[
+        {
+            "id": 1,
+            "name": "COURT VISION 2.0",
+            "image": "assets/image/courtVision.png",
+            "type":"hiking",
+            "price":"$58,67"
+        },
+        {
+
+        }
+    ]
+}

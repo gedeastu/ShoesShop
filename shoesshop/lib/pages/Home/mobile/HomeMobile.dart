@@ -10,6 +10,8 @@ class HomeMobile extends StatefulWidget {
 }
 
 class _HomeMobileState extends State<HomeMobile> {
+  late List<Map<String, dynamic>> PopularProducts;
+  bool isLoading = false;
   //reference box
   // final _box = Hive.box('box');
   //
@@ -137,16 +139,13 @@ class _HomeMobileState extends State<HomeMobile> {
             // ),
             backgroundColor: const Color.fromARGB(255, 31, 29, 43),
           ),
-          //SliverFillRemaining(),
-          SliverToBoxAdapter(
-            child: Container(),
-          ),
           SliverToBoxAdapter(
             child: Container(
               margin: const EdgeInsets.all(20.0),
               height: 300,
               width: 300,
               color: Colors.blue,
+              child:Container()
             ),
           ),
            SliverToBoxAdapter(
