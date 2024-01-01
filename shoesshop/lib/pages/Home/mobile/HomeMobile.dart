@@ -12,7 +12,8 @@ class HomeMobile extends StatefulWidget {
 
 class _HomeMobileState extends State<HomeMobile> {
   List<Product> promoProductsData = [
-    Product(name: "COURT VISION 2.0", price: 58.67, imageURL: "assets/image/courtVision.png", type: "Hiking")
+    Product(name: "COURT VISION 2.0", price: 58.67, imageURL: "assets/image/courtVision.png", type: "Hiking"),
+    Product(name: "TERREX URBAN LOW", price: 143.98, imageURL: "assets/image/courtVision.png", type: "Hiking")
   ];
   bool isLoading = false;
   //reference box
@@ -90,7 +91,6 @@ class _HomeMobileState extends State<HomeMobile> {
                 padding: EdgeInsets.only(right: 20,left: 20,bottom: 10,),
                 width: double.maxFinite,
                 child: SingleChildScrollView(
-
                   scrollDirection: Axis.horizontal,
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.start,
@@ -122,79 +122,12 @@ class _HomeMobileState extends State<HomeMobile> {
             ),
             backgroundColor: const Color.fromARGB(255, 31, 29, 43),
           ),
-          SliverPadding(
-            padding: EdgeInsets.symmetric(horizontal: 20.0,vertical: 20.0),
-            sliver: SliverList(
+          SingleChildScrollView(
+            child: SliverList(
               delegate: SliverChildBuilderDelegate(
-                (context, index) {
-                  return Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text("Popular Products",style: TextStyle(color: Colors.grey.shade200,fontWeight: FontWeight.bold,fontSize: 20.0),),
-                      SizedBox(height: 10.0,),
-                      SingleChildScrollView(
-                        scrollDirection: Axis.horizontal,
-                        child: Row(
-                          children: [
-                            GestureDetector(
-                              child: Container(
-                                decoration: BoxDecoration(
-                                  color: Colors.white
-                                ),
-                                child: Column(
-                                  children: [
-                                    Text(promoProductsData[index].name,style: TextStyle(color: Colors.black),)
-                                  ],
-                                ),
-                              ),
-                            ),
-                            SizedBox(width: 10,),
-                            GestureDetector(
-                              child: Container(
-                                decoration: BoxDecoration(
-                                  color: Colors.white
-                                ),
-                                child: Column(
-                                  children: [
-                                    Text(promoProductsData[index].name,style: TextStyle(color: Colors.black),)
-                                  ],
-                                ),
-                              ),
-                            ),
-                            SizedBox(width: 10,),
-                            GestureDetector(
-                              child: Container(
-                                decoration: BoxDecoration(
-                                  color: Colors.white
-                                ),
-                                child: Column(
-                                  children: [
-                                    Text(promoProductsData[index].name,style: TextStyle(color: Colors.black),)
-                                  ],
-                                ),
-                              ),
-                            ),
-                            SizedBox(width: 10,),
-                            GestureDetector(
-                              child: Container(
-                                decoration: BoxDecoration(
-                                  color: Colors.white
-                                ),
-                                child: Column(
-                                  children: [
-                                    Text(promoProductsData[index].name,style: TextStyle(color: Colors.black),)
-                                  ],
-                                ),
-                              ),
-                            ),
-                            SizedBox(width: 10,),
-                          ],
-                        ),
-                      ),
-                    ],
-                  );
+                (BuildContext context, int index) {
+                  
                 },
-                childCount: promoProductsData.length
               )
             ),
           )
