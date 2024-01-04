@@ -122,15 +122,64 @@ class _HomeMobileState extends State<HomeMobile> {
             ),
             backgroundColor: const Color.fromARGB(255, 31, 29, 43),
           ),
-          SingleChildScrollView(
-            child: SliverList(
+        SliverPadding(
+          padding: EdgeInsets.all(8.0),
+          sliver:  SliverList(
               delegate: SliverChildBuilderDelegate(
                 (BuildContext context, int index) {
-                  
+                switch (index) {
+                case 0:
+                  return Column(
+                    children: [
+                      Text("Popular Products"),
+                      Container(
+                        height: 200,
+                        child: ListView.builder(
+                          scrollDirection: Axis.horizontal,
+                          itemCount: promoProductsData.length,
+                          itemBuilder: (BuildContext context, int index) {
+                            return Container(
+                              width: 200,
+                              margin: EdgeInsets.only(right: 10,left: 10,top: 10),
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(20),
+                                color: const Color.fromARGB(255, 241, 240, 242)
+                              ),
+                              child: Container(
+                                padding: EdgeInsets.symmetric(vertical: 10,horizontal: 10),
+                                child: Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    Image.asset(promoProductsData[index].imageURL),
+                                    Text(promoProductsData[index].name,style: TextStyle(fontWeight: FontWeight.bold),)
+                                  ],
+                                ),
+                              ),
+                            );
+                          }, 
+                        ),
+                      ),
+                    ],
+                  );
+                  case 1:
+                    return Container(
+                      child: Column(
+                        children: [
+                          
+                        ],
+                      ),
+                    );
+                default:
+                return 
+                Container(
+                  height: 100,
+                  child: Text("Hello")
+                );
+              }
                 },
               )
             ),
-          )
+        )
         ],
       ),
     );
