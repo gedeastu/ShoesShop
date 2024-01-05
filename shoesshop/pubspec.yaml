@@ -70,6 +70,10 @@ flutter:
     - assets/image/union.svg
     - assets/sample.json
     - assets/image/courtVision.png
+    - assets/image/terrexUrban.png
+    - assets/image/sl20.png
+    - assets/image/predator.png
+    - assets/image/ultra4d.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
