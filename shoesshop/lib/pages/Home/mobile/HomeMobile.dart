@@ -123,35 +123,43 @@ class _HomeMobileState extends State<HomeMobile> {
             backgroundColor: const Color.fromARGB(255, 31, 29, 43),
           ),
         SliverPadding(
-          padding: EdgeInsets.all(8.0),
+          padding: EdgeInsets.all(0),
           sliver:  SliverList(
               delegate: SliverChildBuilderDelegate(
                 (BuildContext context, int index) {
                 switch (index) {
                 case 0:
                   return Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Text("Popular Products"),
+                      Padding(
+                        padding: EdgeInsets.only(right: 20,left: 20,top: 20),
+                        child: Text("Popular Products", style: TextStyle(color: Colors.white,fontWeight: FontWeight.bold,fontSize: 23),)
+                      ),
                       Container(
-                        height: 200,
+                        height: 260,
                         child: ListView.builder(
                           scrollDirection: Axis.horizontal,
                           itemCount: promoProductsData.length,
                           itemBuilder: (BuildContext context, int index) {
                             return Container(
                               width: 200,
-                              margin: EdgeInsets.only(right: 10,left: 10,top: 10),
+                              height: double.infinity,
+                              margin: EdgeInsets.only(top: 10,right: 0,left: 20),
                               decoration: BoxDecoration(
                                 borderRadius: BorderRadius.circular(20),
                                 color: const Color.fromARGB(255, 241, 240, 242)
                               ),
                               child: Container(
-                                padding: EdgeInsets.symmetric(vertical: 10,horizontal: 10),
+                                padding: EdgeInsets.symmetric(horizontal: 10),
                                 child: Column(
                                   crossAxisAlignment: CrossAxisAlignment.start,
+                                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                                   children: [
                                     Image.asset(promoProductsData[index].imageURL),
-                                    Text(promoProductsData[index].name,style: TextStyle(fontWeight: FontWeight.bold),)
+                                    Text(promoProductsData[index].type),
+                                    Text(promoProductsData[index].name,style: TextStyle(fontWeight: FontWeight.bold),),
+                                    Text("\$${promoProductsData[index].price}")
                                   ],
                                 ),
                               ),
