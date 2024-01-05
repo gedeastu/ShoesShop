@@ -1,4 +1,4 @@
-import 'package:app/models/Home_Screen_Model/promoProducts.dart';
+import 'package:app/models/Home_Screen_Model/promo_products_models.dart';
 import 'package:get/get.dart';
 class PopularProductsController extends GetxController{
   var promoProductsData = <Product>[

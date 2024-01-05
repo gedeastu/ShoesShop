@@ -1,10 +1,12 @@
+import 'package:app/controllers/Home_Screen_Controllers/new_arrivals_controllers.dart';
 import 'package:app/controllers/Home_Screen_Controllers/popular_products_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 class HomeMobile extends StatelessWidget {
   HomeMobile({super.key});
-  final controller_home = Get.put(PopularProductsController());
+  final controller_popular_products = Get.put(PopularProductsController());
+  final controller_news_arrivals = Get.put(NewArrivalsControllers());
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -91,7 +93,8 @@ class HomeMobile extends StatelessWidget {
               )
             ),
             backgroundColor: const Color.fromARGB(255, 31, 29, 43),
-          ),
+        ),
+
         SliverPadding(
           padding: EdgeInsets.all(0),
           sliver:  SliverList(
@@ -110,7 +113,7 @@ class HomeMobile extends StatelessWidget {
                         height: 260,
                         child: ListView.builder(
                           scrollDirection: Axis.horizontal,
-                          itemCount: controller_home.promoProductsData.length,
+                          itemCount: controller_popular_products.promoProductsData.length,
                           itemBuilder: (BuildContext context, int index) {
                             return Container(
                               width: 200,
@@ -127,14 +130,14 @@ class HomeMobile extends StatelessWidget {
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                                   children: [
-                                    Image.asset(controller_home.promoProductsData[index].imageURL),
-                                    Text(controller_home.promoProductsData[index].type),
-                                    Text(controller_home.promoProductsData[index].name,style: TextStyle(fontWeight: FontWeight.bold),),
-                                    Text("\$${controller_home.promoProductsData[index].price}"),
-                                    ElevatedButton(onPressed: (){
-                                      controller_home.OnClick(index);
-                                    }
-                                    , child: Text("${controller_home.promoProductsData[index].isClicked}"))
+                                    Image.asset(controller_popular_products.promoProductsData[index].imageURL),
+                                    Text(controller_popular_products.promoProductsData[index].type),
+                                    Text(controller_popular_products.promoProductsData[index].name,style: TextStyle(fontWeight: FontWeight.bold),),
+                                    Text("\$${controller_popular_products.promoProductsData[index].price}"),
+                                    // ElevatedButton(onPressed: (){
+                                    //   controller_popular_products.OnClick(index);
+                                    // }
+                                    // , child: Text("${controller_popular_products.promoProductsData[index].isClicked}"))
                                   ],
                                 ))
                               ),
@@ -145,12 +148,36 @@ class HomeMobile extends StatelessWidget {
                     ],
                   );
                   case 1:
-                    return Container(
-                      child: Column(
-                        children: [
-                          
-                        ],
-                      ),
+                    return Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Padding(
+                          padding: EdgeInsets.only(right: 20,left: 20,top: 35),
+                          child: Text("News Arrivals",style: TextStyle(color: Colors.white,fontWeight: FontWeight.bold,fontSize: 23),),
+                        ),
+                        Container(
+                          color: Colors.amber,
+                          height: double.maxFinite,
+                          padding: EdgeInsets.symmetric(horizontal: 20),
+                          child: ListView.builder(
+                            scrollDirection: Axis.vertical,
+                            itemCount: controller_news_arrivals.arrivalData.length,
+                            itemBuilder: (BuildContext context,int index) {
+                              return Container(
+                                child: Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    Text(controller_news_arrivals.arrivalData[index].name, style: TextStyle(color: Colors.white,fontWeight: FontWeight.normal,fontSize: 15),),
+                                    Text(controller_news_arrivals.arrivalData[index].type, style: TextStyle(color: Colors.white,fontWeight: FontWeight.normal,fontSize: 15),),
+                                    Text("${controller_news_arrivals.arrivalData[index].price}", style: TextStyle(color: Colors.white,fontWeight: FontWeight.normal,fontSize: 15),),
+                                    SizedBox(height: 20,)
+                                  ],
+                                ),
+                              );
+                            },
+                          ),
+                        )
+                      ],
                     );
                 default:
                 return 
