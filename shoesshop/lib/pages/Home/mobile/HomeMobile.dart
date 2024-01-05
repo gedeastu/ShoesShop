@@ -1,47 +1,17 @@
-import 'package:app/models/Home_Screen_Model/promoProducts.dart';
+import 'package:app/controllers/Home_Screen_Controllers/popular_products_controller.dart';
 import 'package:flutter/material.dart';
-//import 'package:flutter_svg/svg.dart';
-//import 'package:hive/hive.dart';
+import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
-class HomeMobile extends StatefulWidget {
-  const HomeMobile({super.key});
-
-  @override
-  State<HomeMobile> createState() => _HomeMobileState();
-}
-
-class _HomeMobileState extends State<HomeMobile> {
-  List<Product> promoProductsData = [
-    Product(name: "COURT VISION 2.0", price: 58.67, imageURL: "assets/image/courtVision.png", type: "Hiking"),
-    Product(name: "TERREX URBAN LOW", price: 143.98, imageURL: "assets/image/courtVision.png", type: "Hiking")
-  ];
-  bool isLoading = false;
-  //reference box
-  // final _box = Hive.box('box');
-  //
-  // //navigation link
-  // void navigationLinkData(){
-  //   _box.put(1, 'All Shoes');
-  //   print(_box.get(1));
-  // }
-  //
-  // //popularData
-  // void popularData(){
-  //
-  // }
-  //
-  // //newArrivalsData
-  // void newArrivalsData(){
-  //
-  // }
-
+class HomeMobile extends StatelessWidget {
+  HomeMobile({super.key});
+  final controller_home = Get.put(PopularProductsController());
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: const Color.fromARGB(255, 31, 29, 43),
       body: CustomScrollView(
         slivers: [
-          SliverAppBar(
+        SliverAppBar(
             pinned: true,
             expandedHeight: 170,
             collapsedHeight: 80,
@@ -140,7 +110,7 @@ class _HomeMobileState extends State<HomeMobile> {
                         height: 260,
                         child: ListView.builder(
                           scrollDirection: Axis.horizontal,
-                          itemCount: promoProductsData.length,
+                          itemCount: controller_home.promoProductsData.length,
                           itemBuilder: (BuildContext context, int index) {
                             return Container(
                               width: 200,
@@ -152,16 +122,21 @@ class _HomeMobileState extends State<HomeMobile> {
                               ),
                               child: Container(
                                 padding: EdgeInsets.symmetric(horizontal: 10),
-                                child: Column(
+                                child: Obx(() => 
+                                  Column(
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                                   children: [
-                                    Image.asset(promoProductsData[index].imageURL),
-                                    Text(promoProductsData[index].type),
-                                    Text(promoProductsData[index].name,style: TextStyle(fontWeight: FontWeight.bold),),
-                                    Text("\$${promoProductsData[index].price}")
+                                    Image.asset(controller_home.promoProductsData[index].imageURL),
+                                    Text(controller_home.promoProductsData[index].type),
+                                    Text(controller_home.promoProductsData[index].name,style: TextStyle(fontWeight: FontWeight.bold),),
+                                    Text("\$${controller_home.promoProductsData[index].price}"),
+                                    ElevatedButton(onPressed: (){
+                                      controller_home.OnClick(index);
+                                    }
+                                    , child: Text("${controller_home.promoProductsData[index].isClicked}"))
                                   ],
-                                ),
+                                ))
                               ),
                             );
                           }, 
@@ -184,7 +159,8 @@ class _HomeMobileState extends State<HomeMobile> {
                   child: Text("Hello")
                 );
               }
-                },
+              },
+              childCount: 5
               )
             ),
         )
