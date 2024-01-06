@@ -13,7 +13,7 @@ class _BottomNavigationState extends State<BottomNavigation> {
   @override
   Widget build(BuildContext context) {
     return CurvedNavigationBar(
-        buttonBackgroundColor: Color.fromARGB(255, 0, 251, 255),
+        buttonBackgroundColor: Color.fromARGB(255, 52, 46, 82),
         height: 75,
         index: index,
         color: Color.fromARGB(255,37, 40, 54),
@@ -55,10 +55,10 @@ class _BottomNavigationState extends State<BottomNavigation> {
             //     ],
             //   ),
             // ),
-            Icon(Icons.home,size: 30,color: index == 0 ? Colors.blue:Colors.grey.shade200,),
-            Icon(Icons.chat,size: 30,color: index == 1 ? Colors.blue:Colors.grey.shade200,),
-            Icon(Icons.favorite,size: 30,color: index == 2 ? Colors.blue:Colors.grey.shade200,),
-            Icon(Icons.account_circle_rounded,size: 30,color: index == 3 ? Colors.blue:Colors.grey.shade200,)
+            Icon(Icons.home,size: 30,color: Colors.grey.shade200,),
+            Icon(Icons.chat,size: 30,color: Colors.grey.shade200,),
+            Icon(Icons.favorite,size: 30,color:Colors.grey.shade200,),
+            Icon(Icons.account_circle_rounded,size: 30,color: Colors.grey.shade200,)
             //  Container(
             //   padding: EdgeInsets.all(8),
             //   child: Column(
