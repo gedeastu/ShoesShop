@@ -8,8 +8,6 @@ class Home extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: ResponsiveLayout(mobileBody: HomeMobile(), desktopBody: HomeDesktop()),
-    );
+    return ResponsiveLayout(mobileBody: HomeMobile(), desktopBody: HomeDesktop());
   }
 }

@@ -1,6 +1,6 @@
-import 'package:app/pages/splash_screen/SplashScreen.dart';
+import 'package:app/components/bottom_navigation.dart';
+import 'package:app/layouts/home/HomeLayout.dart';
 import 'package:flutter/material.dart';
-
 class Root extends StatelessWidget {
   
   const Root({super.key});
@@ -9,7 +9,11 @@ class Root extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: SplashScreen(),
+      home: Scaffold(
+        backgroundColor: const Color.fromARGB(255, 31, 29, 43),
+        body: Home(),
+        bottomNavigationBar: BottomNavigation()
+      ),
     );
   }
 }
