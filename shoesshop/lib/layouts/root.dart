@@ -10,6 +10,7 @@ class Root extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Scaffold(
+        extendBody: true,
         backgroundColor: const Color.fromARGB(255, 31, 29, 43),
         body: Home(),
         bottomNavigationBar: BottomNavigation()
