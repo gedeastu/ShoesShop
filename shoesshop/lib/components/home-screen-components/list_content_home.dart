@@ -15,18 +15,18 @@ class ListContentHome extends StatelessWidget {
               delegate: SliverChildBuilderDelegate(
                 (BuildContext context, int index) {
                 return Container(
-                  margin: EdgeInsets.only(bottom: 15),
+                  margin: const EdgeInsets.only(bottom: 15),
                   child: 
                   Row(
                     children: [
                       Image.asset(controller_news_arrivals.arrivalData[index].urlImage),
-                      SizedBox(width: 20,),
+                      const SizedBox(width: 20,),
                       Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                         children: [
                           Text(controller_news_arrivals.arrivalData[index].type, style: const TextStyle(color: Colors.white,fontWeight: FontWeight.normal,fontSize: 15),),
-                          Container(width: 200,child: Text(controller_news_arrivals.arrivalData[index].name, style: const TextStyle(color: Colors.white,fontWeight: FontWeight.bold,fontSize: 18,),)),
+                          SizedBox(width: 200,child: Text(controller_news_arrivals.arrivalData[index].name, style: const TextStyle(color: Colors.white,fontWeight: FontWeight.bold,fontSize: 18,),)),
                           Text("\$${controller_news_arrivals.arrivalData[index].price}", style: const TextStyle(color: Colors.blue,fontWeight: FontWeight.normal,fontSize: 15),),
                         ],
                       ),

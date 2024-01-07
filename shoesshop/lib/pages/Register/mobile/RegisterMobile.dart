@@ -15,11 +15,11 @@ class _RegisterMobileState extends State<RegisterMobile> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color.fromARGB(255, 31, 29, 43),
+      backgroundColor: const Color.fromARGB(255, 31, 29, 43),
       body: SafeArea(
         child: SingleChildScrollView(
           child: Container(
-            padding: EdgeInsets.only(left: 25.0,right: 25.0,top: 25.0),
+            padding: const EdgeInsets.only(left: 25.0,right: 25.0,top: 25.0),
             child: 
             Column(
 
@@ -28,46 +28,46 @@ class _RegisterMobileState extends State<RegisterMobile> {
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Text("Sign Up",style: TextStyle(color: Colors.white,fontWeight: FontWeight.bold,fontSize: 25),),
-                      SizedBox(height: 5.0,),
+                      const Text("Sign Up",style: TextStyle(color: Colors.white,fontWeight: FontWeight.bold,fontSize: 25),),
+                      const SizedBox(height: 5.0,),
                       Text("Sign In to Continue",style: TextStyle(color: Colors.grey.shade600),),
-                      SizedBox(height: 40.0,),
+                      const SizedBox(height: 40.0,),
                        Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Text("Full Name",style: TextStyle(color: Colors.grey.shade200,fontWeight: FontWeight.normal,fontSize: 17),),
-                          SizedBox(height: 10.0,),
-                          InputField(controller: widget.emailController, inputType: TextInputType.emailAddress, hintText: "Your Full Name",rounded: 10.0,icon: Icon(Icons.perm_identity,color: Colors.blue,),)
+                          const SizedBox(height: 10.0,),
+                          InputField(controller: widget.emailController, inputType: TextInputType.emailAddress, hintText: "Your Full Name",rounded: 10.0,icon: const Icon(Icons.perm_identity,color: Colors.blue,),)
                         ],
                       ),
-                      SizedBox(height: 25.0,),
+                      const SizedBox(height: 25.0,),
                        Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Text("Username",style: TextStyle(color: Colors.grey.shade200,fontWeight: FontWeight.normal,fontSize: 17),),
-                          SizedBox(height: 10.0,),
-                          InputField(controller: widget.emailController, inputType: TextInputType.emailAddress, hintText: "Your Username",rounded: 10.0,icon: Icon(Icons.remove_circle_outlined,color: Colors.blue,),)
+                          const SizedBox(height: 10.0,),
+                          InputField(controller: widget.emailController, inputType: TextInputType.emailAddress, hintText: "Your Username",rounded: 10.0,icon: const Icon(Icons.remove_circle_outlined,color: Colors.blue,),)
                         ],
                       ),
-                      SizedBox(height: 25.0,),
+                      const SizedBox(height: 25.0,),
                       Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Text("Email Address",style: TextStyle(color: Colors.grey.shade200,fontWeight: FontWeight.normal,fontSize: 17),),
-                          SizedBox(height: 10.0,),
-                          InputField(controller: widget.emailController, inputType: TextInputType.emailAddress, hintText: "Your Email Address",rounded: 10.0,icon: Icon(Icons.email,color: Colors.blue,),)
+                          const SizedBox(height: 10.0,),
+                          InputField(controller: widget.emailController, inputType: TextInputType.emailAddress, hintText: "Your Email Address",rounded: 10.0,icon: const Icon(Icons.email,color: Colors.blue,),)
                         ],
                       ),
-                      SizedBox(height: 25.0,),
+                      const SizedBox(height: 25.0,),
                       Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Text("Password",style: TextStyle(color: Colors.grey.shade200,fontWeight: FontWeight.normal,fontSize: 17),),
-                          SizedBox(height: 10.0,),
+                          const SizedBox(height: 10.0,),
                           PasswordField(controller: widget.passwordController, inputType: TextInputType.visiblePassword, hintText: "Your Password",rounded: 10.0,)
                         ],
                       ),
-                      SizedBox(height: 25.0,),
+                      const SizedBox(height: 25.0,),
                       Container(
                         width: double.infinity,
                         height: 50,
@@ -88,7 +88,7 @@ class _RegisterMobileState extends State<RegisterMobile> {
                         ),
                         onPressed: (){
                            Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context) {
-                            return Home();
+                            return const Home();
                           },));
                         }, 
                         child: Text("Sign Up",style: TextStyle(color: Colors.grey.shade200,fontWeight: FontWeight.bold,fontSize: 15),)),
@@ -96,7 +96,7 @@ class _RegisterMobileState extends State<RegisterMobile> {
                     ],
                   ),
                 ),
-                SizedBox(height: 25,),
+                const SizedBox(height: 25,),
                 Container(
                   child: Row(
                       mainAxisAlignment: MainAxisAlignment.center,
@@ -115,7 +115,7 @@ class _RegisterMobileState extends State<RegisterMobile> {
                               }
                           })
                         ),
-                        child: Text("Sign In"),
+                        child: const Text("Sign In"),
                         )
                   ],),
                 )

@@ -1,3 +1,4 @@
+// ignore: depend_on_referenced_packages
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:flutter/material.dart';
 
@@ -13,17 +14,17 @@ class _BottomNavigationState extends State<BottomNavigation> {
   @override
   Widget build(BuildContext context) {
     return CurvedNavigationBar(
-        buttonBackgroundColor: Color.fromARGB(255, 52, 46, 82),
+        buttonBackgroundColor: const Color.fromARGB(255, 65, 51, 137),
         height: 75,
         index: index,
-        color: Color.fromARGB(255,37, 40, 54),
+        color: const Color.fromARGB(255,37, 40, 54),
         backgroundColor: Colors.transparent,
         onTap: (int index)=>(
           setState(() {
             this.index = index;
           })
         ),
-        animationDuration: Duration(milliseconds: 300),
+        animationDuration: const Duration(milliseconds: 300),
         items: [
             // Container(
             //   decoration: BoxDecoration(

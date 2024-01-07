@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class AppBarHome extends StatelessWidget {
@@ -33,7 +32,7 @@ class AppBarHome extends StatelessWidget {
                                 fontSize: 25,
                                 color: Colors.grey.shade200
                               )),
-                              SizedBox(height: 3,),
+                              const SizedBox(height: 3,),
                               Text("@alexkeinn",style: GoogleFonts.poppins(
                                 color: Colors.grey.shade600,
                                 fontSize: 17,
@@ -54,7 +53,7 @@ class AppBarHome extends StatelessWidget {
             bottom: PreferredSize(
               preferredSize: const Size.fromHeight(0), 
               child: Container(
-                padding: EdgeInsets.only(right: 20,left: 20,bottom: 10,),
+                padding: const EdgeInsets.only(right: 20,left: 20,bottom: 10,),
                 width: double.maxFinite,
                 child: SingleChildScrollView(
                   scrollDirection: Axis.horizontal,
@@ -77,10 +76,10 @@ class AppBarHome extends StatelessWidget {
                           child: const Text("All Shoes",style: TextStyle(color: Colors.white),),
                         )
                       ),
-                      const SizedBox(width: 10,),
-                      Text("Heloo",style: TextStyle(color: Colors.grey.shade200)),
-                      const SizedBox(width: 10,),
-                      Text("Heloo",style: TextStyle(color: Colors.grey.shade200))
+                      const SizedBox(width: 20,),
+                      Text("Running",style: TextStyle(color: Colors.grey.shade200)),
+                      const SizedBox(width: 20,),
+                      Text("Training",style: TextStyle(color: Colors.grey.shade200))
                     ],
                   ),
                 ),

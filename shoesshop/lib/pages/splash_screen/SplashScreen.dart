@@ -1,3 +1,4 @@
+// ignore: file_names
 import 'package:app/layouts/login/LoginLayout.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -22,7 +23,7 @@ class _SplashScreenState extends State<SplashScreen> with TickerProviderStateMix
     Future.delayed(const Duration(seconds: 2),(){
       Navigator.of(context).pushReplacement(
         MaterialPageRoute(
-          builder: (_) => Login()
+          builder: (_) => const Login()
         ),
       );
     });
@@ -41,7 +42,7 @@ class _SplashScreenState extends State<SplashScreen> with TickerProviderStateMix
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color.fromARGB(255, 31, 29, 43),
+      backgroundColor: const Color.fromARGB(255, 31, 29, 43),
       body: Container(
         width: double.infinity,
         height: double.infinity,
